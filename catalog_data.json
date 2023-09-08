@@ -3,34 +3,50 @@
   "model": "catalog.category",
   "pk": 1,
   "fields": {
-    "category_name": "nuts",
-    "description": "Different nuts"
+    "category_name": "telegram bots",
+    "description": "Different telegram bots"
   }
 },
 {
   "model": "catalog.category",
   "pk": 2,
   "fields": {
-    "category_name": "screws",
-    "description": "Different screws"
+    "category_name": "mailings",
+    "description": "Different mailing services"
   }
 },
 {
   "model": "catalog.category",
   "pk": 3,
   "fields": {
-    "category_name": "tyres",
-    "description": "Different tyres"
+    "category_name": "utilities",
+    "description": "Different useful utilities"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 4,
+  "fields": {
+    "category_name": "web applications",
+    "description": "Different web applications"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 5,
+  "fields": {
+    "category_name": "microservices",
+    "description": "Different microservices"
   }
 },
 {
   "model": "catalog.product",
   "pk": 1,
   "fields": {
-    "product_name": "winter tyre",
-    "description": "Tyre for winter",
-    "preview": "products_images/winter_tyre.bmp",
-    "category": 3,
+    "product_name": "hello bot",
+    "description": "Telegram bot for greeting",
+    "preview": "products_images/hello bot.bmp",
+    "category": 1,
     "price": 100.0,
     "created_at": "2023-09-07T19:14:29Z",
     "changed_at": "2023-09-07T19:14:32Z"
@@ -40,10 +56,10 @@
   "model": "catalog.product",
   "pk": 2,
   "fields": {
-    "product_name": "summer tyre",
-    "description": "Tyre for summer",
-    "preview": "products_images/summer_tyre.bmp",
-    "category": 3,
+    "product_name": "antispam bot",
+    "description": "Telegram bot for preventing spam",
+    "preview": "products_images/antispam bot.bmp",
+    "category": 1,
     "price": 110.0,
     "created_at": "2023-09-07T19:14:29Z",
     "changed_at": "2023-09-07T19:14:32Z"
@@ -53,11 +69,11 @@
   "model": "catalog.product",
   "pk": 3,
   "fields": {
-    "product_name": "M3 nut",
-    "description": "Nut M3",
-    "preview": "products_images/M3 nut.bmp",
-    "category": 1,
-    "price": 10.0,
+    "product_name": "simple mailing service",
+    "description": "Very simple mailing service",
+    "preview": "products_images/simple mailing service.bmp",
+    "category": 2,
+    "price": 150.0,
     "created_at": "2023-09-07T19:14:29Z",
     "changed_at": "2023-09-07T19:14:32Z"
   }
@@ -66,11 +82,11 @@
   "model": "catalog.product",
   "pk": 4,
   "fields": {
-    "product_name": "M3x10 screw",
-    "description": "M3x10 screw description",
-    "preview": "products_images/M3x10 screw.bmp",
-    "category": 2,
-    "price": 10.0,
+    "product_name": "fill utility",
+    "description": "Utility for filling databases",
+    "preview": "products_images/fill utility.bmp",
+    "category": 3,
+    "price": 200.0,
     "created_at": "2023-09-07T19:14:29Z",
     "changed_at": "2023-09-07T19:14:32Z"
   }
@@ -79,11 +95,11 @@
   "model": "catalog.product",
   "pk": 5,
   "fields": {
-    "product_name": "M3x20 screw",
-    "description": "M3x20 screw description",
-    "preview": "products_images/M3x20_screw.bmp",
-    "category": 2,
-    "price": 15.0,
+    "product_name": "simple chat",
+    "description": "Simple chat web application",
+    "preview": "products_images/simple chat.bmp",
+    "category": 4,
+    "price": 1500.0,
     "created_at": "2023-09-08T09:52:09Z",
     "changed_at": "2023-09-08T09:52:11Z"
   }
@@ -92,13 +108,13 @@
   "model": "catalog.product",
   "pk": 6,
   "fields": {
-    "product_name": "M5 nut",
-    "description": "Nut M5",
-    "preview": "products_images/M5_nut.bmp",
-    "category": 1,
-    "price": 14.0,
-    "created_at": "2023-09-08T09:53:33Z",
-    "changed_at": "2023-09-08T09:53:35Z"
+    "product_name": "my microservice",
+    "description": "Simple microservice",
+    "preview": "products_images/my_microservice.bmp",
+    "category": 5,
+    "price": 90.0,
+    "created_at": "2023-09-08T10:07:39Z",
+    "changed_at": "2023-09-08T10:07:39Z"
   }
 }
 ]
