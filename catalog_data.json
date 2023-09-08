@@ -1,0 +1,65 @@
+[
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "category_name": "nuts",
+    "description": "Different nuts"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "category_name": "screws",
+    "description": "Different screws"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 3,
+  "fields": {
+    "category_name": "tyres",
+    "description": "Different tyres"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "product_name": "winter tyre",
+    "description": "Tyre for winter",
+    "preview": "products_images/winter_tyre.bmp",
+    "category": 3,
+    "price": 100.0,
+    "created_at": "2023-09-07T19:14:29Z",
+    "changed_at": "2023-09-07T19:14:32Z"
+  }
+},
+  {
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "product_name": "summer tyre",
+    "description": "Tyre for summer",
+    "preview": "products_images/summer_tyre.bmp",
+    "category": 3,
+    "price": 110.0,
+    "created_at": "2023-09-07T19:14:29Z",
+    "changed_at": "2023-09-07T19:14:32Z"
+  }
+},
+  {
+  "model": "catalog.product",
+  "pk": 3,
+  "fields": {
+    "product_name": "M3 nut",
+    "description": "Nut M3",
+    "preview": "products_images/summer_tyre.bmp",
+    "category": 1,
+    "price": 10.0,
+    "created_at": "2023-09-07T19:14:29Z",
+    "changed_at": "2023-09-07T19:14:32Z"
+  }
+}
+]
