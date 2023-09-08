@@ -116,5 +116,14 @@
     "created_at": "2023-09-08T10:07:39Z",
     "changed_at": "2023-09-08T10:07:39Z"
   }
+},
+{
+  "model": "catalog.contacts",
+  "pk": 1,
+  "fields": {
+    "country": "USA",
+    "itn": "91-1144442",
+    "address": "Redmond,WA,98052-6399"
+  }
 }
 ]
