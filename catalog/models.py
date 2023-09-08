@@ -22,3 +22,10 @@ class Product(models.Model):
 
     def __str__(self):
         return f"Product(pk={self.pk}, product_name={self.product_name!r})"
+
+
+class Contacts(models.Model):
+    """Model of contacts"""
+    country = models.CharField(max_length=150, verbose_name='country')
+    itn = models.CharField(max_length=30, verbose_name='ITN')
+    address = models.CharField(max_length=200, verbose_name='address')
