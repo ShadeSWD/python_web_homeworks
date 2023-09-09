@@ -5,8 +5,9 @@ from catalog.models import *
 def home(request):
     context = {
         'title': 'Home',
+        'products': Product.objects.all(),
     }
-    print(Product.objects.all()[:5])
+
     return render(request, "catalog/home.html", context=context)
 
 
