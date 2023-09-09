@@ -3,8 +3,11 @@ from catalog.models import *
 
 
 def home(request):
+    context = {
+        'title': 'Home',
+    }
     print(Product.objects.all()[:5])
-    return render(request, "catalog/home.html")
+    return render(request, "catalog/home.html", context=context)
 
 
 def contacts(request):
