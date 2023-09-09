@@ -110,7 +110,7 @@
   "fields": {
     "product_name": "my microservice",
     "description": "Simple microservice",
-    "preview": "products_images/my_microservice.bmp",
+    "preview": "products_images/my microservice.bmp",
     "category": 5,
     "price": 90.0,
     "created_at": "2023-09-08T10:07:39Z",
