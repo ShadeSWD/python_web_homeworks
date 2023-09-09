@@ -45,7 +45,7 @@
   "fields": {
     "product_name": "hello bot",
     "description": "Telegram bot for greeting",
-    "preview": "products_images/hello bot.bmp",
+    "preview": "products_images/hello bot1.bmp",
     "category": 1,
     "price": 100.0,
     "created_at": "2023-09-07T19:14:29Z",
@@ -110,7 +110,7 @@
   "fields": {
     "product_name": "my microservice",
     "description": "Simple microservice",
-    "preview": "products_images/my_microservice.bmp",
+    "preview": "products_images/my microservice.bmp",
     "category": 5,
     "price": 90.0,
     "created_at": "2023-09-08T10:07:39Z",

@@ -3,8 +3,16 @@ from catalog.models import *
 
 
 def home(request):
-    print(Product.objects.all()[:5])
-    return render(request, "catalog/home.html")
+    context = {
+        'title': 'Home',
+        'products': Product.objects.all(),
+    }
+
+    if request.method == 'POST':
+        product = request.POST.get('product', None)
+        product()
+
+    return render(request, "catalog/home.html", context=context)
 
 
 def contacts(request):
@@ -20,3 +28,12 @@ def contacts(request):
         visitor['message'] = request.POST.get('message', None)
         print(visitor)
     return render(request, "catalog/contacts.html", context=context)
+
+
+def product(request, product_id):
+    context = {
+        'title': 'product page',
+        'product': Product.objects.get(pk=product_id),
+    }
+
+    return render(request, "catalog/product.html", context=context)
