@@ -53,6 +53,7 @@ class Post(models.Model):
     changed_at = models.DateTimeField(verbose_name='change date', auto_now_add=True)
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE, verbose_name='theme')
     views_count = models.PositiveIntegerField(verbose_name='views count', default=0)
+    is_published = models.BooleanField(verbose_name='is published', default=True)
 
     def __str__(self):
         return f"Post(pk={self.pk}, post_name={self.post_name!r})"
