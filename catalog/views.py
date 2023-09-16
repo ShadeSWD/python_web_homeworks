@@ -26,7 +26,7 @@ class BlogListView(ListView):
     model = Post
     template_name = "catalog/blog.html"
     context_object_name = 'posts'
-    queryset = Post.objects.all()
+    queryset = Post.objects.filter(is_published=True)
 
 
 class PostCreateView(CreateView):
