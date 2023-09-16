@@ -7,7 +7,7 @@ class Category(models.Model):
     description = models.TextField(verbose_name='description')
 
     def __str__(self):
-        return f"Product(pk={self.pk}, product_name={self.category_name!r})"
+        return f"Category(pk={self.pk}, category_name={self.category_name!r})"
 
 
 class Product(models.Model):
@@ -15,7 +15,7 @@ class Product(models.Model):
     product_name = models.CharField(max_length=150, verbose_name='product name')
     description = models.TextField(verbose_name='description')
     preview = models.ImageField(verbose_name='preview', upload_to='products_images')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='category')
     price = models.FloatField(verbose_name='price')
     created_at = models.DateTimeField(verbose_name='creation date')
     changed_at = models.DateTimeField(verbose_name='change date')
@@ -32,3 +32,27 @@ class Contacts(models.Model):
 
     def __str__(self):
         return f"Contacts(pk={self.pk}, country={self.country!r})"
+
+
+class Theme(models.Model):
+    """Model of theme of posts"""
+    theme_name = models.CharField(max_length=150, verbose_name='theme name')
+    description = models.TextField(verbose_name='description')
+
+    def __str__(self):
+        return f"Theme(pk={self.pk}, theme_name={self.theme_name!r})"
+
+
+class Post(models.Model):
+    """Model of blog post"""
+    post_name = models.CharField(max_length=150, verbose_name='post name')
+    slug = models.CharField(max_length=20, verbose_name='slug')
+    containment = models.TextField(verbose_name='containment')
+    preview = models.ImageField(verbose_name='preview', upload_to='products_images')
+    created_at = models.DateTimeField(verbose_name='creation date')
+    changed_at = models.DateTimeField(verbose_name='change date')
+    theme = models.ForeignKey(Theme, on_delete=models.CASCADE, verbose_name='theme')
+    views_count = models.IntegerField(verbose_name='views count')
+
+    def __str__(self):
+        return f"Post(pk={self.pk}, post_name={self.post_name!r})"
