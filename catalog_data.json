@@ -118,7 +118,7 @@
   }
 },
 {
-  "model": "catalog.contacts",
+  "model": "contacts.contacts",
   "pk": 1,
   "fields": {
     "country": "USA",
