@@ -286,6 +286,19 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2023-09-17T09:18:02.453Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "Contacts(pk=1, country='USA')",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -754,6 +767,42 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add contacts",
+    "content_type": 14,
+    "codename": "add_contacts"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change contacts",
+    "content_type": 14,
+    "codename": "change_contacts"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete contacts",
+    "content_type": 14,
+    "codename": "delete_contacts"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view contacts",
+    "content_type": 14,
+    "codename": "view_contacts"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -873,6 +922,14 @@
   "fields": {
     "app_label": "blog",
     "model": "theme"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "contacts",
+    "model": "contacts"
   }
 },
 {
@@ -1025,6 +1082,15 @@
     "created_at": "2023-09-17T08:42:44.448Z",
     "views_count": 19,
     "is_published": true
+  }
+},
+{
+  "model": "contacts.contacts",
+  "pk": 1,
+  "fields": {
+    "country": "USA",
+    "itn": "91-1144442",
+    "address": "Redmond,WA,98052-6399"
   }
 }
 ]
