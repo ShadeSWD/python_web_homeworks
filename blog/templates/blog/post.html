@@ -19,6 +19,7 @@
           <h1 class="card-title pricing-card-title">{{ post.created_at }}</h1>
           <ul class="list-unstyled mt-3 mb-4 text-start m-3">
             <li>{{ post.containment }}</li>
+            <li>Количество просмотров: {{ post.views_count }}</li>
           </ul>
           <img src="{{ post.preview | media_url }}" width="100%"/>
           <div class="row">

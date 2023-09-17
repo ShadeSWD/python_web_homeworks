@@ -9,6 +9,12 @@ class PostDetailView(DetailView):
     template_name = "blog/post.html"
     context_object_name = 'post'
 
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        self.object.views_count += 1
+        self.object.save()
+        return self.object
+
 
 class BlogListView(ListView):
     model = Post
