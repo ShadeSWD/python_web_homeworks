@@ -17,8 +17,8 @@ class Product(models.Model):
     preview = models.ImageField(verbose_name='preview', upload_to='products_images')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='category')
     price = models.FloatField(verbose_name='price')
-    created_at = models.DateTimeField(verbose_name='creation date')
-    changed_at = models.DateTimeField(verbose_name='change date')
+    created_at = models.DateTimeField(verbose_name='creation date', auto_now_add=True)
+    changed_at = models.DateTimeField(verbose_name='change date', auto_now_add=True)
 
     def __str__(self):
         return f"Product(pk={self.pk}, product_name={self.name!r})"
