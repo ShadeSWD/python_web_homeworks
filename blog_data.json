@@ -3,7 +3,7 @@
   "model": "blog.post",
   "pk": 1,
   "fields": {
-    "post_name": "My post",
+    "name": "My post",
     "slug": "my-post",
     "containment": "First post with data",
     "preview": "",
@@ -16,7 +16,7 @@
   "model": "blog.post",
   "pk": 2,
   "fields": {
-    "post_name": "Another post",
+    "name": "Another post",
     "slug": "another-post",
     "containment": "Another post with data",
     "preview": "",
