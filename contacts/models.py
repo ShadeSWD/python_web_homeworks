@@ -9,3 +9,4 @@ class Contacts(models.Model):
 
     def __str__(self):
         return f"Contacts(pk={self.pk}, country={self.country!r})"
+    
