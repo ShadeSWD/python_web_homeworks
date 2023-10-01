@@ -7,7 +7,7 @@ class Category(models.Model):
     description = models.TextField(verbose_name='description')
 
     def __str__(self):
-        return f"{self.name!r})"
+        return f"{self.name!r}"
 
 
 class Product(models.Model):

@@ -31,7 +31,19 @@ class ProductCreateView(CreateView):
 
 
 class ProductUpdateView(UpdateView):
-    pass
+    model = Product
+    form_class = ProductForm
+    context_object_name = 'product'
+    success_url = reverse_lazy("catalog:list")
+
+    def get_object(self, queryset=None):
+        pk = self.kwargs.get('pk')
+        return get_object_or_404(Product, pk=pk)
+
+    def form_valid(self, form):
+        new_product = form.save()
+        new_product.save()
+        return super().form_valid(form)
 
 
 class ProductDeleteView(DeleteView):
