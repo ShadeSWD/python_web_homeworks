@@ -18,7 +18,17 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='category')
     price = models.FloatField(verbose_name='price')
     created_at = models.DateTimeField(verbose_name='creation date', auto_now_add=True)
-    changed_at = models.DateTimeField(verbose_name='change date', auto_now_add=True)
+    changed_at = models.DateTimeField(verbose_name='change date', auto_now=True)
 
     def __str__(self):
         return f"{self.name!r}"
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='category')
+    version_number = models.IntegerField(verbose_name='version number')
+    version_name = models.CharField(max_length=200, verbose_name='version name')
+    is_active = models.BooleanField(default=False, verbose_name='active')
+
+    def __str__(self):
+        return f"{self.version_name}"

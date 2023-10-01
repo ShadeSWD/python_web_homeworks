@@ -44,7 +44,7 @@
   "pk": 1,
   "fields": {
     "name": "hello bot",
-    "description": "Telegram bot for greeting",
+    "description": "telegram bot for greeting users and authors",
     "preview": "products_images/hello bot1.bmp",
     "category": 1,
     "price": 100.0,
@@ -57,12 +57,12 @@
   "pk": 2,
   "fields": {
     "name": "antispam bot",
-    "description": "Telegram bot for preventing spam",
+    "description": "telegram bot for preventing spam",
     "preview": "products_images/antispam bot.bmp",
     "category": 1,
     "price": 110.0,
     "created_at": "2023-09-07T19:14:29Z",
-    "changed_at": "2023-09-07T19:14:32Z"
+    "changed_at": "2023-10-01T12:50:26.245Z"
   }
 },
 {
@@ -115,6 +115,19 @@
     "price": 90.0,
     "created_at": "2023-09-08T10:07:39Z",
     "changed_at": "2023-09-08T10:07:39Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 8,
+  "fields": {
+    "name": "утилита",
+    "description": "интересная утилита",
+    "preview": "products_images/fill_utility_RitGFAO.bmp",
+    "category": 3,
+    "price": 300.0,
+    "created_at": "2023-10-01T08:47:03.756Z",
+    "changed_at": "2023-10-01T08:47:03.756Z"
   }
 }
 ]
