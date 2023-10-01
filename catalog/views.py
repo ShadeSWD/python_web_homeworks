@@ -1,5 +1,6 @@
-from catalog.models import *
-from catalog.forms import *
+from django.forms import formset_factory
+from catalog.forms import ProductForm, VersionForm
+from catalog.models import Product, Version
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView

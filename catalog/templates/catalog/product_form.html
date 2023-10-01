@@ -21,15 +21,15 @@
                         </div>
                     </div>
                 </div>
-                {% if formset %}
+                {% if version_formset %}
                     <div class="col-6">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Версии товара</h3>
                             </div>
                             <div class="card-body">
-                                {{ formset.management_form }}
-                                {% for form in formset.forms %}
+                                {{ version_formset.management_form }}
+                                {% for form in version_formset.forms %}
                                     {{ form.as_p }}
                                     {% if not forloop.last %}
                                         <hr class="mb-4">

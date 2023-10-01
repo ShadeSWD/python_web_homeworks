@@ -1,13 +1,14 @@
 from django import forms
-from .models import Product
+from .models import Product, Version
 
 
 class ProductForm(forms.ModelForm):
     forbidden_words = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар']
+    version = forms.ModelChoiceField(queryset=Version.objects.all(), required=False, empty_label="Выберите версию")
 
     class Meta:
         model = Product
-        fields = ['name', 'description', 'preview', 'category', 'price']
+        fields = ['name', 'description', 'preview', 'category', 'price', 'version']
 
     def clean_name(self):
         name = self.cleaned_data['name'].lower()
@@ -22,3 +23,9 @@ class ProductForm(forms.ModelForm):
             if word in description:
                 raise forms.ValidationError(f"Нельзя использовать слово '{word}' в описании продукта.")
         return description
+
+
+class VersionForm(forms.ModelForm):
+    class Meta:
+        model = Version
+        fields = ['number', 'name', 'is_active']
