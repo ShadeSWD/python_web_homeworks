@@ -22,7 +22,17 @@
           </ul>
           <img src="{{ product.preview | media_url }}" width="100%"/>
           <div class="row">
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+            <div class="col-4">
+              <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+            </div>
+            <div class="col-4">
+              <a class="btn btn-lg btn-block btn-outline-primary"
+                 href="/catalog/product/{{ product.pk }}/update/" role="button">Обновить</a>
+            </div>
+            <div class="col-4">
+              <a class="btn btn-lg btn-block btn-outline-danger"
+                 href="/catalog/product/{{ product.pk }}/delete/" role="button">Удалить</a>
+            </div>
           </div>
         </div>
       </div>
