@@ -3,7 +3,7 @@ from django.db import models
 
 class Post(models.Model):
     """Model of blog post"""
-    post_name = models.CharField(max_length=150, verbose_name='post name')
+    name = models.CharField(max_length=150, verbose_name='post name')
     slug = models.CharField(max_length=20, verbose_name='slug', unique=True)
     containment = models.TextField(verbose_name='containment')
     preview = models.ImageField(verbose_name='preview', upload_to='products_images', null=True, blank=True)
@@ -12,5 +12,5 @@ class Post(models.Model):
     is_published = models.BooleanField(verbose_name='is published', default=True)
 
     def __str__(self):
-        return f"Post(pk={self.pk}, post_name={self.post_name!r})"
+        return f"{self.name!r}"
 
