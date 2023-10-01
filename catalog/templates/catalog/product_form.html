@@ -31,9 +31,6 @@
                                 {{ version_formset.management_form }}
                                 {% for form in version_formset.forms %}
                                     {{ form.as_p }}
-                                    {% if not forloop.last %}
-                                        <hr class="mb-4">
-                                    {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
