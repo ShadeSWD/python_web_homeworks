@@ -1,5 +1,7 @@
 from catalog.models import *
 from catalog.forms import *
+from django.urls import reverse_lazy
+from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
@@ -33,4 +35,10 @@ class ProductUpdateView(UpdateView):
 
 
 class ProductDeleteView(DeleteView):
-    pass
+    model = Product
+    context_object_name = 'product'
+    success_url = reverse_lazy("catalog:list")
+
+    def get_object(self, queryset=None):
+        pk = self.kwargs.get('pk')
+        return get_object_or_404(Product, pk=pk)

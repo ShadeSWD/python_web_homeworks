@@ -7,7 +7,7 @@ class Category(models.Model):
     description = models.TextField(verbose_name='description')
 
     def __str__(self):
-        return f"Category(pk={self.pk}, category_name={self.name!r})"
+        return f"{self.name!r})"
 
 
 class Product(models.Model):
@@ -21,4 +21,4 @@ class Product(models.Model):
     changed_at = models.DateTimeField(verbose_name='change date', auto_now_add=True)
 
     def __str__(self):
-        return f"Product(pk={self.pk}, product_name={self.name!r})"
+        return f"{self.name!r}"
