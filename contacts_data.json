@@ -1,0 +1,11 @@
+[
+{
+  "model": "contacts.contacts",
+  "pk": 1,
+  "fields": {
+    "country": "USA",
+    "itn": "91-1144442",
+    "address": "Redmond,WA,98052-6399"
+  }
+}
+]

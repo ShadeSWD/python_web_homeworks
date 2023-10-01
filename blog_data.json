@@ -1,0 +1,28 @@
+[
+{
+  "model": "blog.post",
+  "pk": 1,
+  "fields": {
+    "post_name": "My post",
+    "slug": "my-post",
+    "containment": "First post with data",
+    "preview": "",
+    "created_at": "2023-09-17T08:42:18.691Z",
+    "views_count": 15,
+    "is_published": true
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 2,
+  "fields": {
+    "post_name": "Another post",
+    "slug": "another-post",
+    "containment": "Another post with data",
+    "preview": "",
+    "created_at": "2023-09-17T08:42:44.448Z",
+    "views_count": 22,
+    "is_published": true
+  }
+}
+]
