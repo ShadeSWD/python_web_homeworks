@@ -3,7 +3,7 @@
   "model": "catalog.category",
   "pk": 1,
   "fields": {
-    "category_name": "telegram bots",
+    "name": "telegram bots",
     "description": "Different telegram bots"
   }
 },
@@ -11,7 +11,7 @@
   "model": "catalog.category",
   "pk": 2,
   "fields": {
-    "category_name": "mailings",
+    "name": "mailings",
     "description": "Different mailing services"
   }
 },
@@ -19,7 +19,7 @@
   "model": "catalog.category",
   "pk": 3,
   "fields": {
-    "category_name": "utilities",
+    "name": "utilities",
     "description": "Different useful utilities"
   }
 },
@@ -27,7 +27,7 @@
   "model": "catalog.category",
   "pk": 4,
   "fields": {
-    "category_name": "web applications",
+    "name": "web applications",
     "description": "Different web applications"
   }
 },
@@ -35,7 +35,7 @@
   "model": "catalog.category",
   "pk": 5,
   "fields": {
-    "category_name": "microservices",
+    "name": "microservices",
     "description": "Different microservices"
   }
 },
@@ -43,7 +43,7 @@
   "model": "catalog.product",
   "pk": 1,
   "fields": {
-    "product_name": "hello bot",
+    "name": "hello bot",
     "description": "Telegram bot for greeting",
     "preview": "products_images/hello bot1.bmp",
     "category": 1,
@@ -56,7 +56,7 @@
   "model": "catalog.product",
   "pk": 2,
   "fields": {
-    "product_name": "antispam bot",
+    "name": "antispam bot",
     "description": "Telegram bot for preventing spam",
     "preview": "products_images/antispam bot.bmp",
     "category": 1,
@@ -69,7 +69,7 @@
   "model": "catalog.product",
   "pk": 3,
   "fields": {
-    "product_name": "simple mailing service",
+    "name": "simple mailing service",
     "description": "Very simple mailing service",
     "preview": "products_images/simple mailing service.bmp",
     "category": 2,
@@ -82,7 +82,7 @@
   "model": "catalog.product",
   "pk": 4,
   "fields": {
-    "product_name": "fill utility",
+    "name": "fill utility",
     "description": "Utility for filling databases",
     "preview": "products_images/fill utility.bmp",
     "category": 3,
@@ -95,7 +95,7 @@
   "model": "catalog.product",
   "pk": 5,
   "fields": {
-    "product_name": "simple chat",
+    "name": "simple chat",
     "description": "Simple chat web application",
     "preview": "products_images/simple chat.bmp",
     "category": 4,
@@ -108,7 +108,7 @@
   "model": "catalog.product",
   "pk": 6,
   "fields": {
-    "product_name": "my microservice",
+    "name": "my microservice",
     "description": "Simple microservice",
     "preview": "products_images/my microservice.bmp",
     "category": 5,

@@ -3,16 +3,16 @@ from django.db import models
 
 class Category(models.Model):
     """Model of category of products"""
-    category_name = models.CharField(max_length=150, verbose_name='category name')
+    name = models.CharField(max_length=150, verbose_name='category name')
     description = models.TextField(verbose_name='description')
 
     def __str__(self):
-        return f"Category(pk={self.pk}, category_name={self.category_name!r})"
+        return f"Category(pk={self.pk}, category_name={self.name!r})"
 
 
 class Product(models.Model):
     """Model of product"""
-    product_name = models.CharField(max_length=150, verbose_name='product name')
+    name = models.CharField(max_length=150, verbose_name='product name')
     description = models.TextField(verbose_name='description')
     preview = models.ImageField(verbose_name='preview', upload_to='products_images')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='category')
@@ -21,4 +21,4 @@ class Product(models.Model):
     changed_at = models.DateTimeField(verbose_name='change date')
 
     def __str__(self):
-        return f"Product(pk={self.pk}, product_name={self.product_name!r})"
+        return f"Product(pk={self.pk}, product_name={self.name!r})"
