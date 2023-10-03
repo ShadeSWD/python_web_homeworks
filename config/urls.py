@@ -24,6 +24,7 @@ urlpatterns = [
     path('catalog/', include('catalog.urls', namespace='catalog')),
     path('blog/', include('blog.urls', namespace='blog')),
     path('contacts/', include('contacts.urls', namespace='contacts')),
+    path('users/', include('users.urls', namespace='users')),
 ]
 
 if settings.DEBUG:
