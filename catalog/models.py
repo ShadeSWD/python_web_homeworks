@@ -1,10 +1,12 @@
 from django.db import models
+from users.models import User
 
 
 class Category(models.Model):
     """Model of category of products"""
     name = models.CharField(max_length=150, verbose_name='category name')
     description = models.TextField(verbose_name='description')
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return f"{self.name!r}"
@@ -19,6 +21,7 @@ class Product(models.Model):
     price = models.FloatField(verbose_name='price')
     created_at = models.DateTimeField(verbose_name='creation date', auto_now_add=True)
     changed_at = models.DateTimeField(verbose_name='change date', auto_now=True)
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return f"{self.name!r}"

@@ -27,6 +27,7 @@ class ProductCreateView(CreateView):
 
     def form_valid(self, form):
         new_product = form.save()
+        self.object.owner = self.request.user
         new_product.save()
         return super().form_valid(form)
 
@@ -54,6 +55,8 @@ class ProductUpdateView(UpdateView):
         context_data = self.get_context_data()
         formset = context_data['version_formset']
         self.object = form.save()
+        self.object.owner = self.request.user
+        self.object.save()
         if formset.is_valid():
             formset.instance = self.object
             formset.save()

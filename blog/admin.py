@@ -4,6 +4,6 @@ from blog.models import Post
 
 @admin.register(Post)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'name',)
+    list_display = ('pk', 'name', 'owner')
     list_filter = ('created_at',)
     search_fields = ('name',)

@@ -2,6 +2,7 @@ from blog.models import *
 from pytils.translit import slugify
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.urls import reverse_lazy, reverse
+from django.shortcuts import HttpResponseRedirect
 
 
 class PostDetailView(DetailView):
@@ -26,13 +27,14 @@ class BlogListView(ListView):
 class PostCreateView(CreateView):
     model = Post
     template_name = "blog/post_form.html"
-    fields = ('post_name', 'containment',)
+    fields = ('name', 'containment',)
     success_url = reverse_lazy('blog:list')
 
     def form_valid(self, form):
         if form.is_valid():
             new_blog = form.save()
-            new_blog.slug = slugify(new_blog.post_name)
+            new_blog.slug = slugify(new_blog.name)
+            new_blog.owner = self.request.user
             new_blog.save()
         return super().form_valid(form)
 
@@ -40,7 +42,7 @@ class PostCreateView(CreateView):
 class PostUpdateView(UpdateView):
     model = Post
     template_name = "blog/post_form.html"
-    fields = ('post_name', 'containment',)
+    fields = ('name', 'containment',)
 
     def form_valid(self, form):
         if form.is_valid():
