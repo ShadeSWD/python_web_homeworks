@@ -1,4 +1,5 @@
 from django.db import models
+from catalog.models import User
 
 
 class Post(models.Model):
@@ -10,6 +11,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(verbose_name='creation date', auto_now_add=True)
     views_count = models.PositiveIntegerField(verbose_name='views count', default=0)
     is_published = models.BooleanField(verbose_name='is published', default=True)
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return f"{self.name!r}"
