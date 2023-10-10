@@ -5,12 +5,19 @@ from django.urls import reverse_lazy, reverse
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.cache import cache
+from catalog.services import low_level_cache
+from config import settings
 
 
 class ProductDetailView(DetailView):
     model = Product
     template_name = "catalog/product.html"
-    context_object_name = 'product'
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data['product'] = low_level_cache(queryset=Product.objects.get(pk=self.object.pk), key=f'product{self.object.pk}')
+        return context_data
 
 
 class ProductsListView(ListView):

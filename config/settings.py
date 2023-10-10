@@ -12,22 +12,27 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(BASE_DIR / '.env')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^589@_v@v*5oi%ihq$yugj9@mun_^y6rzwsm2=q*segc73^%#!'
+# SECRET_KEY = 'django-insecure-^589@_v@v*5oi%ihq$yugj9@mun_^y6rzwsm2=q*segc73^%#!'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DOMAIN_NAME = os.getenv('DOMAIN_NAME')
 
 # Application definition
 
@@ -82,9 +87,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'web_shop',
+        # 'NAME': 'web_shop',
+        'NAME': os.getenv('DATABASES_NAME'),
         'USER': 'postgres',
-        'PASSWORD': os.getenv('pgAdmin'),
+        # 'PASSWORD': os.getenv('pgAdmin'),
+        'PASSWORD': os.getenv('DATABASES_PASSWORD'),
         'HOST': '127.0.0.1',
         'PORT': 5432,
     }
@@ -146,7 +153,21 @@ LOGOUT_REDIRECT_URL = '/catalog/'
 # E_mail settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
+# EMAIL_HOST_USER = os.getenv('EMAIL_HOST')
+# EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_SSL = False
 EMAIL_USE_TLS = True
+
+CACHE_ENABLED = True
+
+# cache
+if CACHE_ENABLED:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
+            # "LOCATION": "redis://127.0.0.1:6379",
+            'LOCATION': os.getenv('CACHES_LOCATION'),
+        }
+    }
