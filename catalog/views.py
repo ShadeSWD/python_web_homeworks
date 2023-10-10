@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.cache import cache
+from catalog.services import low_level_cache
 from config import settings
 
 
@@ -15,15 +16,7 @@ class ProductDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
-        if settings.CACHE_ENABLED:
-            key = f'product{self.object.pk}'
-            product = cache.get(key)
-            if product is None:
-                product = Product.objects.get(pk=self.object.pk)
-                cache.set(key, product)
-        else:
-            product = Product.objects.get(pk=self.object.pk)
-        context_data['product'] = product
+        context_data['product'] = low_level_cache(queryset=Product.objects.get(pk=self.object.pk), key=f'product{self.object.pk}')
         return context_data
 
 
